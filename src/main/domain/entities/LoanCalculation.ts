@@ -6,7 +6,7 @@ import { MonthlyPayment } from "../valueObjects/MonthlyPayment";
 
 interface Payload {
     readonly emailAddress: string;
-    readonly loadAmount: number;
+    readonly loanAmount: number;
     readonly loanTerm: number;
     readonly lifeInsuranceOptIn: boolean;
 }
@@ -28,7 +28,7 @@ export class LoanCalculation {
 
         this.loanTerm = LoanTerm.create(payload.loanTerm);
 
-        this.loanAmount = LoanAmount.create(payload.loadAmount);
+        this.loanAmount = LoanAmount.create(payload.loanAmount);
 
         this.lifeInsuranceOptIn = payload.lifeInsuranceOptIn;
 
